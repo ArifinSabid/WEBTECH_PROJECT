@@ -53,18 +53,10 @@ if (empty($_POST["gender"])) {
 }
 
 if (empty($_POST["degree"])) {
-    $DegreeErr = "Degree is required";
+    $degreeErr = "degree is required";
   } else {
     $degree = test_input($_POST["degree"]);
   }
-}
-
-if (empty($_POST["degree"])) {
-    $genderErr = "Degree is required";
-  } else {
-    $degree = test_input($_POST["degree"]);
-  }
-}
 
 function test_input($data) {
   $data = trim($data);
@@ -93,13 +85,13 @@ Your date of birth: <br>
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
  
-Degree:
-  <input type="radio" name="degree" <?php if (isset($degree) && $degree=="SSC") echo "checked";?> SSC
-  <input type="radio" name="degree" <?php if (isset($degree) && $degree=="HSC") echo "checked";?> HSC
-  <input type="radio" name="degree" <?php if (isset($degree) && $degree=="BSC") echo "checked";?> BSC 
-  <input type="radio" name="degree" <?php if (isset($degree) && $degree=="MSc") echo "checked";?> MSc    
-  <span class="error">* <?php echo $DegreeErr;?></span>
-  <br><br> 
+ Degree:
+  <input type="radio" name="SSC" value="ssc">SSC
+  <input type="radio" name="HSC" value="hsc">HSC
+  <input type="radio" name="BSC" value="bsc">BSC
+  <input type="radio" name="MSC" value="msc">MSC
+  <span class="error">* <?php echo $degreeErr;?></span>
+  <br><br>
   
   </div><p>
 Blood Group:
